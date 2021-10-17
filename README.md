@@ -1,4 +1,4 @@
-# CLD Hotel Pavelescu Darius
+# CLD Hotelbetrieb Pavelescu Darius
 
 You can either view the CLD by opening https://2122-4ahif-syp.github.io/01-cld-hotel-S1mple133/
 
