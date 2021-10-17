@@ -1,4 +1,3 @@
-#!/bin/bash
 # DO NOT USE
 # OR RATHER READ IT AND THEN USE
 # ONLY WORKS FROM THE PROJECT DIR
@@ -50,10 +49,3 @@ echo "***********************************************************"
 echo trying to create gh-pages under following url
 echo https://${TEMP[3]}.github.io/${REPO_NAME%.*}
 echo "***********************************************************"
-
-
-# Sources:
-# https://stackoverflow.com/a/965072
-# https://stackoverflow.com/a/918931
-# maybe better with subtrees -> https://gist.github.com/cobyism/4730490
-# https://blog.bloomca.me/2017/12/15/how-to-push-folder-to-github-pages.html
