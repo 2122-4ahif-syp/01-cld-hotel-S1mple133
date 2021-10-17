@@ -13,5 +13,6 @@ ifdef::backend-html5[]
 //toc::[]
 
 [plantuml,cld_hotelbetrieb,png]
+----
 include::plantuml/cld_hotelbetrieb.puml[]
-[plantuml]
+----
