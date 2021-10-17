@@ -1,0 +1,87 @@
+@startuml
+
+left to right direction
+
+class Hotelzimmer {
+ - nummer: int
+ - personen: int
+ - kategorie: Kategorie
+}
+
+class Kategorie {
+ - ID: int
+ - bezeichnung: String
+}
+
+class Mitarbeiter {
+ - svnr: String
+ - name: String
+ - addresse: String
+}
+
+class Raumpfleger {
+
+}
+
+class RaumpflegerZimmer {
+    - raumpfleger: Raumpfleger
+    - zimmer: Hotelzimmer
+}
+
+class Betreuer {
+ - fach: String
+}
+
+class Gast {
+ - kundenNr: int
+ - name: String
+ - addresse: String
+}
+
+class Buchung {
+ - gast: Gast
+ - zimmer: Hotelzimmer
+ - von: LocalDate
+ - bis: LocalDate
+ - anzahlLeistungspakete: int
+}
+
+class Leistungspaket {
+ - bezeichnung: String
+ - preis: BigDecimal
+}
+
+class LeistungspaketBetreuer {
+ - betreuer: Betreuer
+ - leistungspaket: Leistungspaket
+}
+
+class Luxuspaket {
+}
+
+class Basispaket {
+}
+
+class LuxuspaketBasispaket {
+ - luxuspaket: Luxuspaket
+ - basispaket: Basispaket
+}
+
+class LeistungspaketBuchung {
+ - leistungspaket: Leistungspaket
+ - buchung: Buchung
+}
+
+Hotelzimmer "*" --> "1" Kategorie: hat eine
+Raumpfleger -down-> Mitarbeiter: "  ist ein"
+(Raumpfleger, Hotelzimmer) -- RaumpflegerZimmer
+Betreuer --> Raumpfleger: "  ist ein"
+Gast "1" <-- "*" Buchung: "  gehört"
+Luxuspaket --> Leistungspaket: ist ein
+Leistungspaket <-- Basispaket: ist ein
+LuxuspaketBasispaket -- (Luxuspaket, Basispaket) : enthält
+(Leistungspaket,Betreuer) -- LeistungspaketBetreuer: wird betreut von
+(Buchung, Leistungspaket) -- LeistungspaketBuchung
+Buchung "0..1" -- "1" Hotelzimmer
+
+@enduml
